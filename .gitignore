@@ -1,0 +1,13 @@
+tmp/*
+tmp
+target/*
+target
+out
+out/*
+*.iml
+.svn
+.svn/*
+.idea/*
+.idea/
+tmp
+tmp/*
