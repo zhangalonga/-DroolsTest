@@ -2,20 +2,13 @@ package com.us.person;
 
 import com.us.person.Person;
 import com.us.person.Teacher;
-import com.us.person.Run;
+import com.us.person.RiskCheckService;
 import java.util.Map;
 import com.us.person.Result;
 dialect "mvel";
 
 
-                function void printName(String name,String desc) {
 
-                  System.out.println("name:"+name+" desc:"+ desc);
-              }
-
-              function Result get(boolean temp){
-                return new Result(temp);
-              }
 
 
               rule "boy"
@@ -29,10 +22,6 @@ dialect "mvel";
 
 
                 then
-                     ((Person)$map.Person).setName(((Teacher)$map.Teacher).name);
-                     $map.put("result",new Result(false));
-                       Run.test($map);
+                     RiskCheckService.checkRiskIp((Person)$map.Person,(Teacher)$map.Teacher);
 
-              end
-
-
+                end
